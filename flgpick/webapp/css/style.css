@@ -1,0 +1,81 @@
+/* Enter your custom styles here */
+
+.scannerHeight {
+    height: 60px ;
+    width: 250px ;
+    line-height: 60px ;
+    padding: 10px ;
+    font-size: 1.5rem ;
+    align-items:start;
+}
+
+.scannerHeight .sapMBtnInner {
+    height: 100px ;
+    width: 250px;
+    align-items:center;
+}
+ 
+.scannerHeight .sapMBtnIcon {
+    font-size: 5.5rem ;
+    align-items: center;
+    margin-right: 60px;
+}
+
+.scannerLabel{
+    font-size: medium;
+    font-weight: bold;
+    align-items: start;
+    padding: 10px;
+}
+
+.putScanner{
+    height: 8px ;
+    width: 25px ;
+    line-height: 60px ;
+    padding: 2.5px ;
+    align-items:start;
+}
+
+.putScanner .sapMBtnInner {
+    height: 50px ;
+    width: 85px;
+    align-items:center;
+    padding: 20px;
+}
+
+.putScanner .sapMBtnIcon{
+    font-size: 50px !important;
+    margin-right: 30px;
+}
+
+/* Confirm Button */
+button[id*="idBtnConfPickConfirm"].sapMBtn {
+    height: 50px !important;
+    width: 150px;
+    padding: 0.5rem !important;    
+}
+
+button[id*="idBtnConfPickConfirm"] .sapMBtnInner {
+    height: 40px !important;
+    padding: 0.5rem;
+}
+button[id*="idBtnConfPickConfirm"] .sapMBtnContent {
+    font-size: 18px !important;
+    font-weight: bold !important;   
+}
+
+/* Cancel Button */
+button[id*="idBtnConfPickCancel"].sapMBtn {
+    height: 50px !important;
+    width: 150px;
+    padding: 0.5rem !important;    
+}
+
+button[id*="idBtnConfPickCancel"] .sapMBtnInner {
+    height: 40px !important;
+    padding: 0.5rem;
+}
+button[id*="idBtnConfPickCancel"] .sapMBtnContent {
+    font-size: 18px !important;
+    font-weight: bold !important;   
+}

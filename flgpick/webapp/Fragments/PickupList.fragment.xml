@@ -1,0 +1,87 @@
+<core:FragmentDefinition
+xmlns="sap.m"
+xmlns:mvc="sap.ui.core.mvc"
+xmlns:core="sap.ui.core"
+xmlns:ndc="sap.ndc"
+xmlns:f="sap.ui.layout.form"
+>
+
+       <Dialog
+        id="idDialogPickingUp"
+        title="{i18n>picking.Frag.title}" 
+	 contentWidth="700px" 
+	 contentHeight="370px">
+              <f:SimpleForm  id="idSimpleFormConfirmPickUp"
+	                editable="true"
+			  layout="ResponsiveGridLayout"
+			  columnsL="2"
+			  columnsM="2"
+			  singleContainerFullSize="true" >
+		       <f:content>
+                       <VBox id="idVboxPickUp">
+                            <Label id="idLblDocNum"
+                                   text="{i18n>documentNumber.LBL}"/>
+                            <Input id="idIpDocNum"
+                                   width="200PX"
+				       editable="false"
+					value="{SelectedRowModel>/EWMOutboundDeliveryOrder}"/>
+                            <Label id="idLblWhTask"
+                                   text="{i18n>whTask.LBL}"/>
+                            <Input id="idIpWhTask"
+                                   width="200PX"
+                                   editable="false"
+                                   value="{SelectedRowModel>/WarehouseTask}"/>
+                            <Label id="idLblDestBin"
+                                   text="{i18n>destinationBin.LBL}"/>
+                            <Input id="idIpDestBin"
+                                   width="200PX"
+                                   editable="false"
+                                   value="{SelectedRowModel>/DestinationStorageBin}"/>
+                            <Label id="idLblSourceBin"
+                                   text="{i18n>sourceBin.LBL}"/>                                   
+                            <HBox  id="idHboxsource">
+                            <Input id="idIpSourceValue"
+                                   width="200PX"
+                                   editable="false"
+                                   value="{SelectedRowModel>/SourceStorageBin}"/>
+                            <Input id="idIpSource"
+                                   width="200PX"
+                                   value=""
+                                   placeholder="{i18n>sourceBin.PH}"/>
+                            <ndc:BarcodeScannerButton
+					id="idBarcodeScannerSourceBin"
+					scanSuccess="onScannerSourceBin"
+					scanFail="onBarcodeScannerSourceBinError"
+					width="100PX"
+                                   class="putScanner"/>
+                            </HBox>  
+                            <Button id="idBtnConfPicksource"
+                                    text="{i18n>btnGO.TXT}"
+                                    type="Emphasized"
+                                    press="onConfirmSourcePickUp"
+                                    ariaHasPopup="Dialog"
+                                    width="150px"/>            
+                      </VBox>
+                     </f:content>
+              </f:SimpleForm>
+        <footer>
+            <Toolbar id="idTlbrCfmpickup">
+                <content>
+                    <ToolbarSpacer id="idTlbrSpCfmpwy"/>
+			   <Button id="idBtnConfPickConfirm"
+                            text="{i18n>btnConfirm.TXT}"
+                            type="Emphasized"
+                            press="onConfirmPickUp"
+                            ariaHasPopup="Dialog"
+                            visible="false"/>
+                            
+			   <Button id="idBtnConfPickCancel"
+                            text="{i18n>btnCancel.TXT}"
+                            type="Default"
+                            press="onConfmPickUpCancel"
+                            ariaHasPopup="Dialog"/>
+                </content>
+            </Toolbar>			
+        </footer>    
+    </Dialog>
+</core:FragmentDefinition>

@@ -1,0 +1,11 @@
+<core:FragmentDefinition
+    xmlns="sap.m"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns:core="sap.ui.core"
+>
+    <BusyDialog
+        id="idBusydialog"
+        title="{i18n>pickConfirm.Dialog.title}"
+        text="{i18n>pickConfirm.Dialog.text}"
+    />
+</core:FragmentDefinition>

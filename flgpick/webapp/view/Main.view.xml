@@ -1,0 +1,114 @@
+<mvc:View
+    controllerName="ns.flgpick.controller.Main"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.m"
+    xmlns:f="sap.f"
+    xmlns:ndc="sap.ndc"
+    xmlns:smartVariantManagement="sap.ui.comp.smartvariants"
+    xmlns:smartFilterBar="sap.ui.comp.smartfilterbar"
+    xmlns:smartTable="sap.ui.comp.smarttable"
+    xmlns:table="sap.ui.table"
+>
+    <f:DynamicPage
+        id="idDynPageMain"
+        headerExpanded="true"
+        toggleHeaderOnTitleClick="true"
+    >
+        <!-- Title -->
+        <f:title>
+            <f:DynamicPageTitle id="idDynPageTitle">
+                <f:heading>
+                    <Title
+                        id="idDynPageHeadTitle"
+                        text="{i18n>title}"
+                        titleStyle="H2"
+                    />
+                </f:heading>
+            </f:DynamicPageTitle>
+        </f:title>
+
+        <!-- Header -->
+        <f:header>
+            <f:DynamicPageHeader
+                id="idDynPageHeader"
+                pinnable="true"
+            >
+                <f:content>
+                    <HBox id="idHbox">
+                        <HBox
+                            id="idScanHBox"
+                            justifyContent="Start"
+                        >
+                            <Label
+                                id="idScanLabel"
+                                text="{i18n>ScanShipLabel.title}"
+                                class="scannerLabel"
+                            />
+                            <ndc:BarcodeScannerButton
+                                id="idScannerShipLabel"
+                                scanSuccess="onScannerShipLabel"
+                                scanFail="onScannerShipLabelError"
+                                class="scannerHeight"
+                                dialogTitle="{i18n>ScanShipLabel.title}"
+                            />
+                        </HBox>
+                        <HBox
+                            id="idSFBHBox"
+                            justifyContent="End"
+                        >
+                            <smartFilterBar:SmartFilterBar
+                                id="idSFBOutbDelEntity"
+                                entitySet="YY1_FLGPCK_E_OutbDelEntity"
+                                persistencyKey="pkSFBOutbDelEntity"
+                                enableBasicSearch="false"
+                                showGoOnFB="true"
+                                showRestoreButton="true"
+                                filterBarExpanded="true"
+                                useToolbar="false"
+                                showClearOnFB="true"
+                                useDateRangeType="true"
+                            >
+                                <smartFilterBar:controlConfiguration>
+                                    <smartFilterBar:ControlConfiguration
+                                        id="idSFBWHNum"
+                                        key="EWMWarehouse"
+                                        mandatory="mandatory"
+                                        hasValueHelpDialog="true"
+                                    />
+                                </smartFilterBar:controlConfiguration>
+                            </smartFilterBar:SmartFilterBar>
+                        </HBox>
+                    </HBox>
+                </f:content>
+            </f:DynamicPageHeader>
+        </f:header>
+
+        <!-- Content -->
+        <f:content>
+            <!-- Smart Table -->
+            <smartTable:SmartTable
+                id="idSTabOutbDelEntity"
+                entitySet="YY1_FLGPCK_E_OutbDelEntity"
+                persistencyKey="pkSTabOutbDelEntity"
+                smartFilterId="idSFBOutbDelEntity"
+                header="{i18n>OutbDelEntity.sTab.title}"
+                useTablePersonalisation="true"
+                enableExport="true"
+                showRowCount="true"
+                showFullScreenButton="false"
+                enableAutoBinding="true"
+                class="sapUiResponsiveContentPadding"
+                enableAutoColumnWidth="true"
+                tableType="ResponsiveTable"
+                requestAtLeastFields="WarehouseTask, WarehouseTaskItem, EWMWarehouse, WarehouseOrder"
+            >
+                <Table
+                    id="idTablOutbDelEntity"
+                    mode="SingleSelectMaster"
+                    selectionChange="onPressOutbDelEntity"
+                    includeItemInSelection="true"
+                />
+            </smartTable:SmartTable>
+        </f:content>
+    </f:DynamicPage>
+</mvc:View>

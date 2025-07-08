@@ -1,0 +1,647 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="1.0" xmlns:edmx="http://schemas.microsoft.com/ado/2007/06/edmx" xmlns:m="http://schemas.microsoft.com/ado/2007/08/dataservices/metadata" xmlns:sap="http://www.sap.com/Protocols/SAPData">
+    <edmx:Reference Uri="./sap/opu/odata/iwfnd/catalogservice;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_AGGREGATION',Version='0001',SAP__Origin='')/$value" xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx">
+        <edmx:Include Namespace="Org.OData.Aggregation.V1" Alias="Aggregation"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="./sap/opu/odata/iwfnd/catalogservice;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_ANALYTICS',Version='0001',SAP__Origin='')/$value" xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx">
+        <edmx:Include Namespace="com.sap.vocabularies.Analytics.v1" Alias="Analytics"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="./sap/opu/odata/iwfnd/catalogservice;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_CAPABILITIES',Version='0001',SAP__Origin='')/$value" xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx">
+        <edmx:Include Namespace="Org.OData.Capabilities.V1" Alias="Capabilities"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="./sap/opu/odata/iwfnd/catalogservice;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_CODELIST',Version='0001',SAP__Origin='')/$value" xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx">
+        <edmx:Include Namespace="com.sap.vocabularies.CodeList.v1" Alias="SAP__CodeList"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="./sap/opu/odata/iwfnd/catalogservice;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_COMMON',Version='0001',SAP__Origin='')/$value" xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx">
+        <edmx:Include Namespace="com.sap.vocabularies.Common.v1" Alias="Common"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="./sap/opu/odata/iwfnd/catalogservice;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_COMMUNICATION',Version='0001',SAP__Origin='')/$value" xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx">
+        <edmx:Include Namespace="com.sap.vocabularies.Communication.v1" Alias="Communication"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="./sap/opu/odata/iwfnd/catalogservice;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_MEASURES',Version='0001',SAP__Origin='')/$value" xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx">
+        <edmx:Include Namespace="Org.OData.Measures.V1" Alias="Measures"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="./sap/opu/odata/iwfnd/catalogservice;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_ODM',Version='0001',SAP__Origin='')/$value" xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx">
+        <edmx:Include Namespace="com.sap.vocabularies.ODM.v1" Alias="SAP__ODM"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="./sap/opu/odata/iwfnd/catalogservice;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_PERSONALDATA',Version='0001',SAP__Origin='')/$value" xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx">
+        <edmx:Include Namespace="com.sap.vocabularies.PersonalData.v1" Alias="PersonalData"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="./sap/opu/odata/iwfnd/catalogservice;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_UI',Version='0001',SAP__Origin='')/$value" xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx">
+        <edmx:Include Namespace="com.sap.vocabularies.UI.v1" Alias="UI"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="./sap/opu/odata/iwfnd/catalogservice;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_VALIDATION',Version='0001',SAP__Origin='')/$value" xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx">
+        <edmx:Include Namespace="Org.OData.Validation.V1" Alias="Validation"/>
+    </edmx:Reference>
+    <edmx:DataServices m:DataServiceVersion="2.0">
+        <Schema Namespace="YY1_FLGPCK_API_CDS" xml:lang="en" sap:schema-version="1" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+            <EntityType Name="I_Customer_VHType" sap:label="Customer" sap:value-list="true" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="Customer"/>
+                </Key>
+                <Property Name="Customer" Type="Edm.String" Nullable="false" MaxLength="10" sap:display-format="UpperCase" sap:text="BPCustomerName" sap:label="Customer" sap:quickinfo="Customer Number"/>
+                <Property Name="OrganizationBPName1" Type="Edm.String" MaxLength="35" sap:label="Customer Name 1" sap:quickinfo="Name"/>
+                <Property Name="BusinessPartnerName1" Type="Edm.String" MaxLength="40" sap:label="Business Partner Name 1" sap:quickinfo="Name 1"/>
+                <Property Name="OrganizationBPName2" Type="Edm.String" MaxLength="35" sap:label="Customer Name 2" sap:quickinfo="Name 2"/>
+                <Property Name="BusinessPartnerName2" Type="Edm.String" MaxLength="40" sap:label="Business Partner Name 2" sap:quickinfo="Name 2"/>
+                <Property Name="Country" Type="Edm.String" MaxLength="3" sap:display-format="UpperCase" sap:label="Country/Region" sap:quickinfo="Country/Region Key"/>
+                <Property Name="CityName" Type="Edm.String" MaxLength="35" sap:label="City"/>
+                <Property Name="BPAddrCityName" Type="Edm.String" MaxLength="40" sap:label="Business Partner Address City" sap:quickinfo="City"/>
+                <Property Name="StreetName" Type="Edm.String" MaxLength="35" sap:label="Street" sap:quickinfo="Street and House Number"/>
+                <Property Name="BPAddrStreetName" Type="Edm.String" MaxLength="60" sap:label="Business Partner Address Street" sap:quickinfo="Street"/>
+                <Property Name="PostalCode" Type="Edm.String" MaxLength="10" sap:display-format="UpperCase" sap:label="Postal Code"/>
+                <Property Name="CustomerName" Type="Edm.String" MaxLength="80" sap:label="Customer Name" sap:quickinfo="Name of Customer"/>
+                <Property Name="BPCustomerName" Type="Edm.String" MaxLength="81" sap:label="Business Partner Customer Name" sap:quickinfo="Customer Name"/>
+                <Property Name="CustomerAccountGroup" Type="Edm.String" MaxLength="4" sap:display-format="UpperCase" sap:label="Account Group" sap:quickinfo="Customer Account Group"/>
+                <Property Name="AuthorizationGroup" Type="Edm.String" MaxLength="4" sap:display-format="UpperCase" sap:label="Authorization" sap:quickinfo="Authorization Group"/>
+                <Property Name="IsBusinessPurposeCompleted" Type="Edm.String" MaxLength="1" sap:display-format="UpperCase" sap:label="Purpose Complete Flag" sap:quickinfo="Business Purpose Completed Flag"/>
+                <Property Name="IsCompetitor" Type="Edm.Boolean" sap:label="Competitors" sap:quickinfo="Indicator: Competitor"/>
+                <Property Name="BusinessPartner" Type="Edm.String" MaxLength="10" sap:display-format="UpperCase" sap:label="Business Partner" sap:quickinfo="Business Partner Number"/>
+                <Property Name="BusinessPartnerType" Type="Edm.String" MaxLength="4" sap:display-format="UpperCase" sap:label="Business Partner Type"/>
+                <Property Name="DataControllerSet" Type="Edm.String" MaxLength="1" sap:display-format="UpperCase" sap:label="Data Ctrlr. Set" sap:quickinfo="BP: Data Controller Set Flag"/>
+                <Property Name="DataController1" Type="Edm.String" MaxLength="30" sap:display-format="UpperCase" sap:label="Data Controller" sap:quickinfo="BP: Data Controller (Internal Use Only)"/>
+                <Property Name="DataController2" Type="Edm.String" MaxLength="30" sap:display-format="UpperCase" sap:label="Data Controller" sap:quickinfo="BP: Data Controller (Internal Use Only)"/>
+                <Property Name="DataController3" Type="Edm.String" MaxLength="30" sap:display-format="UpperCase" sap:label="Data Controller" sap:quickinfo="BP: Data Controller (Internal Use Only)"/>
+                <Property Name="DataController4" Type="Edm.String" MaxLength="30" sap:display-format="UpperCase" sap:label="Data Controller" sap:quickinfo="BP: Data Controller (Internal Use Only)"/>
+                <Property Name="DataController5" Type="Edm.String" MaxLength="30" sap:display-format="UpperCase" sap:label="Data Controller" sap:quickinfo="BP: Data Controller (Internal Use Only)"/>
+                <Property Name="DataController6" Type="Edm.String" MaxLength="30" sap:display-format="UpperCase" sap:label="Data Controller" sap:quickinfo="BP: Data Controller (Internal Use Only)"/>
+                <Property Name="DataController7" Type="Edm.String" MaxLength="30" sap:display-format="UpperCase" sap:label="Data Controller" sap:quickinfo="BP: Data Controller (Internal Use Only)"/>
+                <Property Name="DataController8" Type="Edm.String" MaxLength="30" sap:display-format="UpperCase" sap:label="Data Controller" sap:quickinfo="BP: Data Controller (Internal Use Only)"/>
+                <Property Name="DataController9" Type="Edm.String" MaxLength="30" sap:display-format="UpperCase" sap:label="Data Controller" sap:quickinfo="BP: Data Controller (Internal Use Only)"/>
+                <Property Name="DataController10" Type="Edm.String" MaxLength="30" sap:display-format="UpperCase" sap:label="Data Controller" sap:quickinfo="BP: Data Controller (Internal Use Only)"/>
+            </EntityType>
+            <EntityType Name="I_EWM_StorageType_2Type" sap:label="Storage Type" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="EWMWarehouse"/>
+                    <PropertyRef Name="EWMStorageType"/>
+                </Key>
+                <Property Name="EWMWarehouse" Type="Edm.String" Nullable="false" MaxLength="4" sap:display-format="UpperCase" sap:text="to_Warehouse/EWMWarehouse_Text" sap:label="Warehouse Number" sap:quickinfo="Warehouse Number/Warehouse Complex" sap:value-list="standard"/>
+                <Property Name="EWMStorageType" Type="Edm.String" Nullable="false" MaxLength="4" sap:display-format="UpperCase" sap:text="EWMStorageType_Text" sap:label="Storage Type"/>
+                <Property Name="EWMStorageType_Text" Type="Edm.String" MaxLength="40" sap:label="Description" sap:creatable="false" sap:updatable="false"/>
+                <Property Name="EWMStorageTypeRole" Type="Edm.String" MaxLength="1" sap:display-format="UpperCase" sap:label="Storage Type Role"/>
+                <Property Name="EWMStorageBehavior" Type="Edm.String" MaxLength="1" sap:display-format="UpperCase" sap:label="Storage Behavior"/>
+                <NavigationProperty Name="to_Warehouse" Relationship="YY1_FLGPCK_API_CDS.assoc_732479A87B7A071B2729A1549CB40E7A" FromRole="FromRole_assoc_732479A87B7A071B2729A1549CB40E7A" ToRole="ToRole_assoc_732479A87B7A071B2729A1549CB40E7A"/>
+            </EntityType>
+            <EntityType Name="I_EWM_WarehouseNumber_2Type" sap:label="Warehouse Number" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="EWMWarehouse"/>
+                </Key>
+                <Property Name="EWMWarehouse" Type="Edm.String" Nullable="false" MaxLength="4" sap:display-format="UpperCase" sap:text="EWMWarehouse_Text" sap:label="Warehouse Number" sap:quickinfo="Warehouse Number/Warehouse Complex"/>
+                <Property Name="EWMWarehouse_Text" Type="Edm.String" MaxLength="40" sap:label="Description" sap:creatable="false" sap:updatable="false"/>
+                <Property Name="TimeZoneID" Type="Edm.String" MaxLength="6" sap:display-format="UpperCase" sap:label="Time Zone"/>
+                <Property Name="TimeZoneText" Type="Edm.String" MaxLength="30" sap:label="Time Zone Text"/>
+            </EntityType>
+            <EntityType Name="YY1_FLGPCK_APIType" sap:label="Field Logistics - Picking &amp; Packing API" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="EWMOutboundDeliveryOrder"/>
+                    <PropertyRef Name="EWMOutboundDeliveryOrderItem"/>
+                    <PropertyRef Name="EWMWarehouse"/>
+                </Key>
+                <Property Name="EWMOutboundDeliveryOrder" Type="Edm.String" Nullable="false" MaxLength="35" sap:display-format="UpperCase" sap:required-in-filter="false" sap:label="Document Number"/>
+                <Property Name="EWMOutboundDeliveryOrderItem" Type="Edm.String" Nullable="false" MaxLength="10" sap:display-format="NonNegative" sap:required-in-filter="false" sap:label="Item Number"/>
+                <Property Name="EWMWarehouse" Type="Edm.String" Nullable="false" MaxLength="4" sap:display-format="UpperCase" sap:required-in-filter="false" sap:label="Warehouse Number" sap:quickinfo="Warehouse Number/Warehouse Complex"/>
+                <NavigationProperty Name="to_YY1_FLGPCK_E_OutbDelEntity" Relationship="YY1_FLGPCK_API_CDS.assoc_3F3C64BEB6DFDAA7EA321037CDAE4DB8" FromRole="FromRole_assoc_3F3C64BEB6DFDAA7EA321037CDAE4DB8" ToRole="ToRole_assoc_3F3C64BEB6DFDAA7EA321037CDAE4DB8"/>
+                <NavigationProperty Name="to_YY1_FLGPCK_E_ProdVHEntity" Relationship="YY1_FLGPCK_API_CDS.assoc_A6D2BD4B58BB3B0DC5F46F8F78352F75" FromRole="FromRole_assoc_A6D2BD4B58BB3B0DC5F46F8F78352F75" ToRole="ToRole_assoc_A6D2BD4B58BB3B0DC5F46F8F78352F75"/>
+                <NavigationProperty Name="to_YY1_FLGPCK_E_SrcBinEntity" Relationship="YY1_FLGPCK_API_CDS.assoc_9DAA3414AF719BFD2A5348F9E4EFCD30" FromRole="FromRole_assoc_9DAA3414AF719BFD2A5348F9E4EFCD30" ToRole="ToRole_assoc_9DAA3414AF719BFD2A5348F9E4EFCD30"/>
+                <NavigationProperty Name="to_YY1_FLGPCK_E_STPVHEntity" Relationship="YY1_FLGPCK_API_CDS.assoc_FFBBF889FAF921AD8061FBC3E38B0994" FromRole="FromRole_assoc_FFBBF889FAF921AD8061FBC3E38B0994" ToRole="ToRole_assoc_FFBBF889FAF921AD8061FBC3E38B0994"/>
+                <NavigationProperty Name="to_YY1_FLGPCK_E_StrTyVHEntity" Relationship="YY1_FLGPCK_API_CDS.assoc_744F47DD7E381D1430F6B3C724A3F975" FromRole="FromRole_assoc_744F47DD7E381D1430F6B3C724A3F975" ToRole="ToRole_assoc_744F47DD7E381D1430F6B3C724A3F975"/>
+                <NavigationProperty Name="to_YY1_FLGPCK_E_WhseVHEntity" Relationship="YY1_FLGPCK_API_CDS.assoc_A56284CC5D6B79C3768D43D7DB41868A" FromRole="FromRole_assoc_A56284CC5D6B79C3768D43D7DB41868A" ToRole="ToRole_assoc_A56284CC5D6B79C3768D43D7DB41868A"/>
+            </EntityType>
+            <EntityType Name="YY1_FLGPCK_E_OutbDelEntityType" sap:label="Field Logistics-Outbound Delivery Entity" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="EWMOutboundDeliveryOrder"/>
+                    <PropertyRef Name="EWMOutboundDeliveryOrderItem"/>
+                    <PropertyRef Name="EWMWarehouse"/>
+                </Key>
+                <Property Name="EWMOutboundDeliveryOrder" Type="Edm.String" Nullable="false" MaxLength="35" sap:display-format="UpperCase" sap:required-in-filter="false" sap:label="Document Number"/>
+                <Property Name="EWMOutboundDeliveryOrderItem" Type="Edm.String" Nullable="false" MaxLength="10" sap:display-format="NonNegative" sap:required-in-filter="false" sap:label="Item Number"/>
+                <Property Name="EWMWarehouse" Type="Edm.String" Nullable="false" MaxLength="4" sap:display-format="UpperCase" sap:required-in-filter="false" sap:label="Warehouse Number" sap:quickinfo="Warehouse Number/Warehouse Complex"/>
+                <Property Name="Product" Type="Edm.String" MaxLength="40" sap:display-format="UpperCase" sap:required-in-filter="false" sap:label="Product"/>
+                <Property Name="OutboundDelivery" Type="Edm.String" MaxLength="10" sap:display-format="UpperCase" sap:required-in-filter="false" sap:label="LE Delivery" sap:quickinfo="Logistics Execution Delivery"/>
+                <Property Name="OutboundDeliveryItem" Type="Edm.String" MaxLength="6" sap:display-format="NonNegative" sap:required-in-filter="false" sap:label="Logistics Execution Delivery Item"/>
+                <Property Name="PlannedPickingStatus" Type="Edm.String" MaxLength="1" sap:display-format="UpperCase" sap:required-in-filter="false" sap:label="Status Value"/>
+                <Property Name="PickingStatus" Type="Edm.String" MaxLength="1" sap:display-format="UpperCase" sap:required-in-filter="false" sap:label="Status Value"/>
+                <Property Name="GoodsIssueStatus" Type="Edm.String" MaxLength="1" sap:display-format="UpperCase" sap:required-in-filter="false" sap:label="Status Value"/>
+                <Property Name="WarehouseTask" Type="Edm.String" MaxLength="12" sap:display-format="NonNegative" sap:required-in-filter="false" sap:label="Warehouse Task"/>
+                <Property Name="WarehouseTaskItem" Type="Edm.String" MaxLength="4" sap:display-format="NonNegative" sap:required-in-filter="false" sap:label="WT Item" sap:quickinfo="Warehouse Task Item"/>
+                <Property Name="SourceStorageType" Type="Edm.String" MaxLength="4" sap:display-format="UpperCase" sap:required-in-filter="false" sap:label="Source Storage Type"/>
+                <Property Name="SourceStorageBin" Type="Edm.String" MaxLength="18" sap:display-format="UpperCase" sap:required-in-filter="false" sap:label="Source Storage Bin"/>
+                <Property Name="DestinationStorageType" Type="Edm.String" MaxLength="4" sap:display-format="UpperCase" sap:required-in-filter="false" sap:label="Dest. Storage Type" sap:quickinfo="Destination Storage Type"/>
+                <Property Name="DestinationStorageBin" Type="Edm.String" MaxLength="18" sap:display-format="UpperCase" sap:required-in-filter="false" sap:label="Destination Bin" sap:quickinfo="Destination Storage Bin"/>
+                <Property Name="WarehouseOrder" Type="Edm.String" MaxLength="10" sap:display-format="NonNegative" sap:required-in-filter="false" sap:label="Warehouse Order" sap:quickinfo="Warehouse Order Number"/>
+                <Property Name="ShipToParty" Type="Edm.String" MaxLength="10" sap:display-format="UpperCase" sap:required-in-filter="false" sap:label="Ship-to Party" sap:value-list="standard"/>
+            </EntityType>
+            <EntityType Name="YY1_FLGPCK_E_ProdVHEntityType" sap:label="Field Logistics - Product VH Entity" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="Product"/>
+                    <PropertyRef Name="EWMWarehouse"/>
+                </Key>
+                <Property Name="Product" Type="Edm.String" Nullable="false" MaxLength="40" sap:display-format="UpperCase" sap:required-in-filter="false" sap:text="Product_Text" sap:label="Product" sap:quickinfo="Product Number"/>
+                <Property Name="Product_Text" Type="Edm.String" MaxLength="40" sap:label="Product Description" sap:creatable="false" sap:updatable="false"/>
+                <Property Name="EWMWarehouse" Type="Edm.String" Nullable="false" MaxLength="4" sap:display-format="UpperCase" sap:required-in-filter="false" sap:label="Warehouse Number" sap:quickinfo="Warehouse Number/Warehouse Complex"/>
+                <Property Name="ProductName" Type="Edm.String" MaxLength="40" sap:required-in-filter="false" sap:label="Product Description"/>
+            </EntityType>
+            <EntityType Name="YY1_FLGPCK_E_SrcBinEntityType" sap:label="Field Logistics - SrcBin Valid Entity" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="EWMWarehouse"/>
+                    <PropertyRef Name="WarehouseTask"/>
+                    <PropertyRef Name="WarehouseTaskItem"/>
+                </Key>
+                <Property Name="EWMWarehouse" Type="Edm.String" Nullable="false" MaxLength="4" sap:display-format="UpperCase" sap:required-in-filter="false" sap:text="to_Warehouse/EWMWarehouse_Text" sap:label="Warehouse Number" sap:quickinfo="Warehouse Number/Warehouse Complex" sap:value-list="standard"/>
+                <Property Name="WarehouseTask" Type="Edm.String" Nullable="false" MaxLength="12" sap:display-format="NonNegative" sap:required-in-filter="false" sap:label="Warehouse Task"/>
+                <Property Name="WarehouseTaskItem" Type="Edm.String" Nullable="false" MaxLength="4" sap:display-format="NonNegative" sap:required-in-filter="false" sap:label="WT Item" sap:quickinfo="Warehouse Task Item"/>
+                <Property Name="EWMRefDeliveryDocumentNumber" Type="Edm.String" MaxLength="35" sap:display-format="UpperCase" sap:required-in-filter="false" sap:label="Document Number"/>
+                <Property Name="EWMRefDeliveryDocumentItem" Type="Edm.String" MaxLength="10" sap:display-format="NonNegative" sap:required-in-filter="false" sap:label="Item Number"/>
+                <Property Name="EWMOutboundDeliveryOrder" Type="Edm.String" MaxLength="35" sap:display-format="UpperCase" sap:required-in-filter="false" sap:label="Document Number"/>
+                <Property Name="EWMOutboundDeliveryOrderItem" Type="Edm.String" MaxLength="10" sap:display-format="NonNegative" sap:required-in-filter="false" sap:label="Item Number"/>
+                <Property Name="SourceStorageBin" Type="Edm.String" MaxLength="18" sap:display-format="UpperCase" sap:required-in-filter="false" sap:label="Source Storage Bin"/>
+                <NavigationProperty Name="to_Warehouse" Relationship="YY1_FLGPCK_API_CDS.assoc_224B7D2C71A0CED501BE5CA15A78F394" FromRole="FromRole_assoc_224B7D2C71A0CED501BE5CA15A78F394" ToRole="ToRole_assoc_224B7D2C71A0CED501BE5CA15A78F394"/>
+            </EntityType>
+            <EntityType Name="YY1_FLGPCK_E_STPVHEntityType" sap:label="Field Logistics - ShipToParty VH Entity" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="EWMWarehouse"/>
+                    <PropertyRef Name="ShipToParty"/>
+                </Key>
+                <Property Name="EWMWarehouse" Type="Edm.String" Nullable="false" MaxLength="4" sap:display-format="UpperCase" sap:required-in-filter="false" sap:text="EWMWarehouse_Text" sap:label="Warehouse Number" sap:quickinfo="Warehouse Number/Warehouse Complex"/>
+                <Property Name="EWMWarehouse_Text" Type="Edm.String" MaxLength="40" sap:label="Description" sap:creatable="false" sap:updatable="false"/>
+                <Property Name="ShipToParty" Type="Edm.String" Nullable="false" MaxLength="10" sap:display-format="UpperCase" sap:required-in-filter="false" sap:label="Ship-to Party" sap:value-list="standard"/>
+                <Property Name="Customer" Type="Edm.String" MaxLength="10" sap:display-format="UpperCase" sap:required-in-filter="false" sap:text="CustomerName" sap:label="Customer" sap:quickinfo="Customer Number"/>
+                <Property Name="CustomerName" Type="Edm.String" MaxLength="80" sap:required-in-filter="false" sap:label="Name of Customer"/>
+            </EntityType>
+            <EntityType Name="YY1_FLGPCK_E_StrTyVHEntityType" sap:label="Field Logistics - StorageType VH Entity" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="EWMWarehouse"/>
+                    <PropertyRef Name="SourceStorageType"/>
+                </Key>
+                <Property Name="EWMWarehouse" Type="Edm.String" Nullable="false" MaxLength="4" sap:display-format="UpperCase" sap:required-in-filter="false" sap:text="EWMWarehouse_Text" sap:label="Warehouse Number" sap:quickinfo="Warehouse Number/Warehouse Complex"/>
+                <Property Name="EWMWarehouse_Text" Type="Edm.String" MaxLength="40" sap:label="Description" sap:creatable="false" sap:updatable="false"/>
+                <Property Name="SourceStorageType" Type="Edm.String" Nullable="false" MaxLength="4" sap:display-format="UpperCase" sap:required-in-filter="false" sap:text="to_SourceStorageType/EWMStorageType_Text" sap:label="Source Storage Type" sap:value-list="standard"/>
+                <Property Name="EWMStorageTypeName" Type="Edm.String" MaxLength="40" sap:required-in-filter="false" sap:label="Description"/>
+                <Property Name="Language" Type="Edm.String" MaxLength="2" sap:required-in-filter="false" sap:label="Language Key"/>
+                <Property Name="EWMWarehouse_1" Type="Edm.String" MaxLength="4" sap:display-format="UpperCase" sap:required-in-filter="false" sap:text="to_Warehouse/EWMWarehouse_Text" sap:label="Warehouse Number" sap:quickinfo="Warehouse Number/Warehouse Complex" sap:value-list="standard"/>
+                <NavigationProperty Name="to_SourceStorageType" Relationship="YY1_FLGPCK_API_CDS.assoc_85D56EB330A8D8B59874725879EA4D95" FromRole="FromRole_assoc_85D56EB330A8D8B59874725879EA4D95" ToRole="ToRole_assoc_85D56EB330A8D8B59874725879EA4D95"/>
+                <NavigationProperty Name="to_Warehouse" Relationship="YY1_FLGPCK_API_CDS.assoc_AD473A7307645D4CC7C3423D9F200FDE" FromRole="FromRole_assoc_AD473A7307645D4CC7C3423D9F200FDE" ToRole="ToRole_assoc_AD473A7307645D4CC7C3423D9F200FDE"/>
+            </EntityType>
+            <EntityType Name="YY1_FLGPCK_E_WhseVHEntityType" sap:label="Field Logistics - Warehouse VH Entity" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="EWMWarehouse"/>
+                    <PropertyRef Name="Language"/>
+                </Key>
+                <Property Name="EWMWarehouse" Type="Edm.String" Nullable="false" MaxLength="4" sap:display-format="UpperCase" sap:required-in-filter="false" sap:label="Warehouse Number" sap:quickinfo="Warehouse Number/Warehouse Complex"/>
+                <Property Name="Language" Type="Edm.String" Nullable="false" MaxLength="2" sap:required-in-filter="false" sap:label="Language Key"/>
+                <Property Name="EWMWarehouseDescription" Type="Edm.String" MaxLength="40" sap:required-in-filter="false" sap:label="Description"/>
+            </EntityType>
+            <Association Name="assoc_732479A87B7A071B2729A1549CB40E7A" sap:content-version="1">
+                <End Type="YY1_FLGPCK_API_CDS.I_EWM_StorageType_2Type" Multiplicity="1" Role="FromRole_assoc_732479A87B7A071B2729A1549CB40E7A"/>
+                <End Type="YY1_FLGPCK_API_CDS.I_EWM_WarehouseNumber_2Type" Multiplicity="0..1" Role="ToRole_assoc_732479A87B7A071B2729A1549CB40E7A"/>
+                <ReferentialConstraint>
+                    <Principal Role="ToRole_assoc_732479A87B7A071B2729A1549CB40E7A">
+                        <PropertyRef Name="EWMWarehouse"/>
+                    </Principal>
+                    <Dependent Role="FromRole_assoc_732479A87B7A071B2729A1549CB40E7A">
+                        <PropertyRef Name="EWMWarehouse"/>
+                    </Dependent>
+                </ReferentialConstraint>
+            </Association>
+            <Association Name="assoc_85D56EB330A8D8B59874725879EA4D95" sap:content-version="1">
+                <End Type="YY1_FLGPCK_API_CDS.YY1_FLGPCK_E_StrTyVHEntityType" Multiplicity="1" Role="FromRole_assoc_85D56EB330A8D8B59874725879EA4D95"/>
+                <End Type="YY1_FLGPCK_API_CDS.I_EWM_StorageType_2Type" Multiplicity="0..1" Role="ToRole_assoc_85D56EB330A8D8B59874725879EA4D95"/>
+                <ReferentialConstraint>
+                    <Principal Role="ToRole_assoc_85D56EB330A8D8B59874725879EA4D95">
+                        <PropertyRef Name="EWMWarehouse"/>
+                        <PropertyRef Name="EWMStorageType"/>
+                    </Principal>
+                    <Dependent Role="FromRole_assoc_85D56EB330A8D8B59874725879EA4D95">
+                        <PropertyRef Name="EWMWarehouse_1"/>
+                        <PropertyRef Name="SourceStorageType"/>
+                    </Dependent>
+                </ReferentialConstraint>
+            </Association>
+            <Association Name="assoc_AD473A7307645D4CC7C3423D9F200FDE" sap:content-version="1">
+                <End Type="YY1_FLGPCK_API_CDS.YY1_FLGPCK_E_StrTyVHEntityType" Multiplicity="1" Role="FromRole_assoc_AD473A7307645D4CC7C3423D9F200FDE"/>
+                <End Type="YY1_FLGPCK_API_CDS.I_EWM_WarehouseNumber_2Type" Multiplicity="0..1" Role="ToRole_assoc_AD473A7307645D4CC7C3423D9F200FDE"/>
+                <ReferentialConstraint>
+                    <Principal Role="ToRole_assoc_AD473A7307645D4CC7C3423D9F200FDE">
+                        <PropertyRef Name="EWMWarehouse"/>
+                    </Principal>
+                    <Dependent Role="FromRole_assoc_AD473A7307645D4CC7C3423D9F200FDE">
+                        <PropertyRef Name="EWMWarehouse_1"/>
+                    </Dependent>
+                </ReferentialConstraint>
+            </Association>
+            <Association Name="assoc_3F3C64BEB6DFDAA7EA321037CDAE4DB8" sap:content-version="1">
+                <End Type="YY1_FLGPCK_API_CDS.YY1_FLGPCK_APIType" Multiplicity="1" Role="FromRole_assoc_3F3C64BEB6DFDAA7EA321037CDAE4DB8"/>
+                <End Type="YY1_FLGPCK_API_CDS.YY1_FLGPCK_E_OutbDelEntityType" Multiplicity="*" Role="ToRole_assoc_3F3C64BEB6DFDAA7EA321037CDAE4DB8"/>
+            </Association>
+            <Association Name="assoc_A6D2BD4B58BB3B0DC5F46F8F78352F75" sap:content-version="1">
+                <End Type="YY1_FLGPCK_API_CDS.YY1_FLGPCK_APIType" Multiplicity="1" Role="FromRole_assoc_A6D2BD4B58BB3B0DC5F46F8F78352F75"/>
+                <End Type="YY1_FLGPCK_API_CDS.YY1_FLGPCK_E_ProdVHEntityType" Multiplicity="*" Role="ToRole_assoc_A6D2BD4B58BB3B0DC5F46F8F78352F75"/>
+            </Association>
+            <Association Name="assoc_9DAA3414AF719BFD2A5348F9E4EFCD30" sap:content-version="1">
+                <End Type="YY1_FLGPCK_API_CDS.YY1_FLGPCK_APIType" Multiplicity="1" Role="FromRole_assoc_9DAA3414AF719BFD2A5348F9E4EFCD30"/>
+                <End Type="YY1_FLGPCK_API_CDS.YY1_FLGPCK_E_SrcBinEntityType" Multiplicity="*" Role="ToRole_assoc_9DAA3414AF719BFD2A5348F9E4EFCD30"/>
+            </Association>
+            <Association Name="assoc_FFBBF889FAF921AD8061FBC3E38B0994" sap:content-version="1">
+                <End Type="YY1_FLGPCK_API_CDS.YY1_FLGPCK_APIType" Multiplicity="1" Role="FromRole_assoc_FFBBF889FAF921AD8061FBC3E38B0994"/>
+                <End Type="YY1_FLGPCK_API_CDS.YY1_FLGPCK_E_STPVHEntityType" Multiplicity="*" Role="ToRole_assoc_FFBBF889FAF921AD8061FBC3E38B0994"/>
+            </Association>
+            <Association Name="assoc_744F47DD7E381D1430F6B3C724A3F975" sap:content-version="1">
+                <End Type="YY1_FLGPCK_API_CDS.YY1_FLGPCK_APIType" Multiplicity="1" Role="FromRole_assoc_744F47DD7E381D1430F6B3C724A3F975"/>
+                <End Type="YY1_FLGPCK_API_CDS.YY1_FLGPCK_E_StrTyVHEntityType" Multiplicity="*" Role="ToRole_assoc_744F47DD7E381D1430F6B3C724A3F975"/>
+            </Association>
+            <Association Name="assoc_A56284CC5D6B79C3768D43D7DB41868A" sap:content-version="1">
+                <End Type="YY1_FLGPCK_API_CDS.YY1_FLGPCK_APIType" Multiplicity="1" Role="FromRole_assoc_A56284CC5D6B79C3768D43D7DB41868A"/>
+                <End Type="YY1_FLGPCK_API_CDS.YY1_FLGPCK_E_WhseVHEntityType" Multiplicity="0..1" Role="ToRole_assoc_A56284CC5D6B79C3768D43D7DB41868A"/>
+            </Association>
+            <Association Name="assoc_224B7D2C71A0CED501BE5CA15A78F394" sap:content-version="1">
+                <End Type="YY1_FLGPCK_API_CDS.YY1_FLGPCK_E_SrcBinEntityType" Multiplicity="1" Role="FromRole_assoc_224B7D2C71A0CED501BE5CA15A78F394"/>
+                <End Type="YY1_FLGPCK_API_CDS.I_EWM_WarehouseNumber_2Type" Multiplicity="0..1" Role="ToRole_assoc_224B7D2C71A0CED501BE5CA15A78F394"/>
+                <ReferentialConstraint>
+                    <Principal Role="ToRole_assoc_224B7D2C71A0CED501BE5CA15A78F394">
+                        <PropertyRef Name="EWMWarehouse"/>
+                    </Principal>
+                    <Dependent Role="FromRole_assoc_224B7D2C71A0CED501BE5CA15A78F394">
+                        <PropertyRef Name="EWMWarehouse"/>
+                    </Dependent>
+                </ReferentialConstraint>
+            </Association>
+            <EntityContainer Name="YY1_FLGPCK_API_CDS_Entities" m:IsDefaultEntityContainer="true" sap:message-scope-supported="true" sap:supported-formats="atom json xlsx">
+                <EntitySet Name="I_Customer_VH" EntityType="YY1_FLGPCK_API_CDS.I_Customer_VHType" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:searchable="true" sap:content-version="1"/>
+                <EntitySet Name="I_EWM_StorageType_2" EntityType="YY1_FLGPCK_API_CDS.I_EWM_StorageType_2Type" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1"/>
+                <EntitySet Name="I_EWM_WarehouseNumber_2" EntityType="YY1_FLGPCK_API_CDS.I_EWM_WarehouseNumber_2Type" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:searchable="true" sap:content-version="1"/>
+                <EntitySet Name="YY1_FLGPCK_API" EntityType="YY1_FLGPCK_API_CDS.YY1_FLGPCK_APIType" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1"/>
+                <EntitySet Name="YY1_FLGPCK_E_OutbDelEntity" EntityType="YY1_FLGPCK_API_CDS.YY1_FLGPCK_E_OutbDelEntityType" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1"/>
+                <EntitySet Name="YY1_FLGPCK_E_ProdVHEntity" EntityType="YY1_FLGPCK_API_CDS.YY1_FLGPCK_E_ProdVHEntityType" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1"/>
+                <EntitySet Name="YY1_FLGPCK_E_SrcBinEntity" EntityType="YY1_FLGPCK_API_CDS.YY1_FLGPCK_E_SrcBinEntityType" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1"/>
+                <EntitySet Name="YY1_FLGPCK_E_STPVHEntity" EntityType="YY1_FLGPCK_API_CDS.YY1_FLGPCK_E_STPVHEntityType" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1"/>
+                <EntitySet Name="YY1_FLGPCK_E_StrTyVHEntity" EntityType="YY1_FLGPCK_API_CDS.YY1_FLGPCK_E_StrTyVHEntityType" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1"/>
+                <EntitySet Name="YY1_FLGPCK_E_WhseVHEntity" EntityType="YY1_FLGPCK_API_CDS.YY1_FLGPCK_E_WhseVHEntityType" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1"/>
+                <AssociationSet Name="assoc_FFBBF889FAF921AD8061FBC3E38B0994" Association="YY1_FLGPCK_API_CDS.assoc_FFBBF889FAF921AD8061FBC3E38B0994" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1">
+                    <End EntitySet="YY1_FLGPCK_API" Role="FromRole_assoc_FFBBF889FAF921AD8061FBC3E38B0994"/>
+                    <End EntitySet="YY1_FLGPCK_E_STPVHEntity" Role="ToRole_assoc_FFBBF889FAF921AD8061FBC3E38B0994"/>
+                </AssociationSet>
+                <AssociationSet Name="assoc_3F3C64BEB6DFDAA7EA321037CDAE4DB8" Association="YY1_FLGPCK_API_CDS.assoc_3F3C64BEB6DFDAA7EA321037CDAE4DB8" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1">
+                    <End EntitySet="YY1_FLGPCK_API" Role="FromRole_assoc_3F3C64BEB6DFDAA7EA321037CDAE4DB8"/>
+                    <End EntitySet="YY1_FLGPCK_E_OutbDelEntity" Role="ToRole_assoc_3F3C64BEB6DFDAA7EA321037CDAE4DB8"/>
+                </AssociationSet>
+                <AssociationSet Name="assoc_9DAA3414AF719BFD2A5348F9E4EFCD30" Association="YY1_FLGPCK_API_CDS.assoc_9DAA3414AF719BFD2A5348F9E4EFCD30" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1">
+                    <End EntitySet="YY1_FLGPCK_API" Role="FromRole_assoc_9DAA3414AF719BFD2A5348F9E4EFCD30"/>
+                    <End EntitySet="YY1_FLGPCK_E_SrcBinEntity" Role="ToRole_assoc_9DAA3414AF719BFD2A5348F9E4EFCD30"/>
+                </AssociationSet>
+                <AssociationSet Name="assoc_732479A87B7A071B2729A1549CB40E7A" Association="YY1_FLGPCK_API_CDS.assoc_732479A87B7A071B2729A1549CB40E7A" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1">
+                    <End EntitySet="I_EWM_StorageType_2" Role="FromRole_assoc_732479A87B7A071B2729A1549CB40E7A"/>
+                    <End EntitySet="I_EWM_WarehouseNumber_2" Role="ToRole_assoc_732479A87B7A071B2729A1549CB40E7A"/>
+                </AssociationSet>
+                <AssociationSet Name="assoc_85D56EB330A8D8B59874725879EA4D95" Association="YY1_FLGPCK_API_CDS.assoc_85D56EB330A8D8B59874725879EA4D95" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1">
+                    <End EntitySet="YY1_FLGPCK_E_StrTyVHEntity" Role="FromRole_assoc_85D56EB330A8D8B59874725879EA4D95"/>
+                    <End EntitySet="I_EWM_StorageType_2" Role="ToRole_assoc_85D56EB330A8D8B59874725879EA4D95"/>
+                </AssociationSet>
+                <AssociationSet Name="assoc_224B7D2C71A0CED501BE5CA15A78F394" Association="YY1_FLGPCK_API_CDS.assoc_224B7D2C71A0CED501BE5CA15A78F394" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1">
+                    <End EntitySet="YY1_FLGPCK_E_SrcBinEntity" Role="FromRole_assoc_224B7D2C71A0CED501BE5CA15A78F394"/>
+                    <End EntitySet="I_EWM_WarehouseNumber_2" Role="ToRole_assoc_224B7D2C71A0CED501BE5CA15A78F394"/>
+                </AssociationSet>
+                <AssociationSet Name="assoc_744F47DD7E381D1430F6B3C724A3F975" Association="YY1_FLGPCK_API_CDS.assoc_744F47DD7E381D1430F6B3C724A3F975" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1">
+                    <End EntitySet="YY1_FLGPCK_API" Role="FromRole_assoc_744F47DD7E381D1430F6B3C724A3F975"/>
+                    <End EntitySet="YY1_FLGPCK_E_StrTyVHEntity" Role="ToRole_assoc_744F47DD7E381D1430F6B3C724A3F975"/>
+                </AssociationSet>
+                <AssociationSet Name="assoc_A56284CC5D6B79C3768D43D7DB41868A" Association="YY1_FLGPCK_API_CDS.assoc_A56284CC5D6B79C3768D43D7DB41868A" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1">
+                    <End EntitySet="YY1_FLGPCK_API" Role="FromRole_assoc_A56284CC5D6B79C3768D43D7DB41868A"/>
+                    <End EntitySet="YY1_FLGPCK_E_WhseVHEntity" Role="ToRole_assoc_A56284CC5D6B79C3768D43D7DB41868A"/>
+                </AssociationSet>
+                <AssociationSet Name="assoc_A6D2BD4B58BB3B0DC5F46F8F78352F75" Association="YY1_FLGPCK_API_CDS.assoc_A6D2BD4B58BB3B0DC5F46F8F78352F75" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1">
+                    <End EntitySet="YY1_FLGPCK_API" Role="FromRole_assoc_A6D2BD4B58BB3B0DC5F46F8F78352F75"/>
+                    <End EntitySet="YY1_FLGPCK_E_ProdVHEntity" Role="ToRole_assoc_A6D2BD4B58BB3B0DC5F46F8F78352F75"/>
+                </AssociationSet>
+                <AssociationSet Name="assoc_AD473A7307645D4CC7C3423D9F200FDE" Association="YY1_FLGPCK_API_CDS.assoc_AD473A7307645D4CC7C3423D9F200FDE" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1">
+                    <End EntitySet="YY1_FLGPCK_E_StrTyVHEntity" Role="FromRole_assoc_AD473A7307645D4CC7C3423D9F200FDE"/>
+                    <End EntitySet="I_EWM_WarehouseNumber_2" Role="ToRole_assoc_AD473A7307645D4CC7C3423D9F200FDE"/>
+                </AssociationSet>
+            </EntityContainer>
+            <Annotation Term="Core.SchemaVersion" String="1.0.0" xmlns="http://docs.oasis-open.org/odata/ns/edm"/>
+            <Annotations Target="YY1_FLGPCK_API_CDS.I_EWM_StorageType_2Type/EWMWarehouse" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+                <Annotation Term="Common.ValueList">
+                    <Record>
+                        <PropertyValue Property="Label" String="Warehouse Number"/>
+                        <PropertyValue Property="CollectionPath" String="I_EWM_WarehouseNumber_2"/>
+                        <PropertyValue Property="SearchSupported" Bool="true"/>
+                        <PropertyValue Property="Parameters">
+                            <Collection>
+                                <Record Type="Common.ValueListParameterInOut">
+                                    <PropertyValue Property="LocalDataProperty" PropertyPath="EWMWarehouse"/>
+                                    <PropertyValue Property="ValueListProperty" String="EWMWarehouse"/>
+                                </Record>
+                                <Record Type="Common.ValueListParameterDisplayOnly">
+                                    <PropertyValue Property="ValueListProperty" String="EWMWarehouse_Text"/>
+                                </Record>
+                            </Collection>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+            </Annotations>
+            <Annotations Target="YY1_FLGPCK_API_CDS.YY1_FLGPCK_E_OutbDelEntityType/ShipToParty" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+                <Annotation Term="Common.ValueList">
+                    <Record>
+                        <PropertyValue Property="Label" String="Customer"/>
+                        <PropertyValue Property="CollectionPath" String="I_Customer_VH"/>
+                        <PropertyValue Property="SearchSupported" Bool="true"/>
+                        <PropertyValue Property="Parameters">
+                            <Collection>
+                                <Record Type="Common.ValueListParameterInOut">
+                                    <PropertyValue Property="LocalDataProperty" PropertyPath="ShipToParty"/>
+                                    <PropertyValue Property="ValueListProperty" String="Customer"/>
+                                </Record>
+                                <Record Type="Common.ValueListParameterDisplayOnly">
+                                    <PropertyValue Property="ValueListProperty" String="OrganizationBPName1"/>
+                                </Record>
+                                <Record Type="Common.ValueListParameterDisplayOnly">
+                                    <PropertyValue Property="ValueListProperty" String="BusinessPartnerName1"/>
+                                </Record>
+                                <Record Type="Common.ValueListParameterDisplayOnly">
+                                    <PropertyValue Property="ValueListProperty" String="OrganizationBPName2"/>
+                                </Record>
+                                <Record Type="Common.ValueListParameterDisplayOnly">
+                                    <PropertyValue Property="ValueListProperty" String="BusinessPartnerName2"/>
+                                </Record>
+                                <Record Type="Common.ValueListParameterDisplayOnly">
+                                    <PropertyValue Property="ValueListProperty" String="Country"/>
+                                </Record>
+                                <Record Type="Common.ValueListParameterDisplayOnly">
+                                    <PropertyValue Property="ValueListProperty" String="CityName"/>
+                                </Record>
+                                <Record Type="Common.ValueListParameterDisplayOnly">
+                                    <PropertyValue Property="ValueListProperty" String="StreetName"/>
+                                </Record>
+                                <Record Type="Common.ValueListParameterDisplayOnly">
+                                    <PropertyValue Property="ValueListProperty" String="PostalCode"/>
+                                </Record>
+                                <Record Type="Common.ValueListParameterDisplayOnly">
+                                    <PropertyValue Property="ValueListProperty" String="CustomerName"/>
+                                </Record>
+                                <Record Type="Common.ValueListParameterDisplayOnly">
+                                    <PropertyValue Property="ValueListProperty" String="BPCustomerName"/>
+                                </Record>
+                                <Record Type="Common.ValueListParameterDisplayOnly">
+                                    <PropertyValue Property="ValueListProperty" String="BusinessPartner"/>
+                                </Record>
+                            </Collection>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+            </Annotations>
+            <Annotations Target="YY1_FLGPCK_API_CDS.YY1_FLGPCK_E_SrcBinEntityType/EWMWarehouse" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+                <Annotation Term="Common.ValueList">
+                    <Record>
+                        <PropertyValue Property="Label" String="Warehouse Number"/>
+                        <PropertyValue Property="CollectionPath" String="I_EWM_WarehouseNumber_2"/>
+                        <PropertyValue Property="SearchSupported" Bool="true"/>
+                        <PropertyValue Property="Parameters">
+                            <Collection>
+                                <Record Type="Common.ValueListParameterInOut">
+                                    <PropertyValue Property="LocalDataProperty" PropertyPath="EWMWarehouse"/>
+                                    <PropertyValue Property="ValueListProperty" String="EWMWarehouse"/>
+                                </Record>
+                                <Record Type="Common.ValueListParameterDisplayOnly">
+                                    <PropertyValue Property="ValueListProperty" String="EWMWarehouse_Text"/>
+                                </Record>
+                            </Collection>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+            </Annotations>
+            <Annotations Target="YY1_FLGPCK_API_CDS.YY1_FLGPCK_E_STPVHEntityType/ShipToParty" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+                <Annotation Term="Common.ValueList">
+                    <Record>
+                        <PropertyValue Property="Label" String="Customer"/>
+                        <PropertyValue Property="CollectionPath" String="I_Customer_VH"/>
+                        <PropertyValue Property="SearchSupported" Bool="true"/>
+                        <PropertyValue Property="Parameters">
+                            <Collection>
+                                <Record Type="Common.ValueListParameterInOut">
+                                    <PropertyValue Property="LocalDataProperty" PropertyPath="ShipToParty"/>
+                                    <PropertyValue Property="ValueListProperty" String="Customer"/>
+                                </Record>
+                                <Record Type="Common.ValueListParameterDisplayOnly">
+                                    <PropertyValue Property="ValueListProperty" String="OrganizationBPName1"/>
+                                </Record>
+                                <Record Type="Common.ValueListParameterDisplayOnly">
+                                    <PropertyValue Property="ValueListProperty" String="BusinessPartnerName1"/>
+                                </Record>
+                                <Record Type="Common.ValueListParameterDisplayOnly">
+                                    <PropertyValue Property="ValueListProperty" String="OrganizationBPName2"/>
+                                </Record>
+                                <Record Type="Common.ValueListParameterDisplayOnly">
+                                    <PropertyValue Property="ValueListProperty" String="BusinessPartnerName2"/>
+                                </Record>
+                                <Record Type="Common.ValueListParameterDisplayOnly">
+                                    <PropertyValue Property="ValueListProperty" String="Country"/>
+                                </Record>
+                                <Record Type="Common.ValueListParameterDisplayOnly">
+                                    <PropertyValue Property="ValueListProperty" String="CityName"/>
+                                </Record>
+                                <Record Type="Common.ValueListParameterDisplayOnly">
+                                    <PropertyValue Property="ValueListProperty" String="StreetName"/>
+                                </Record>
+                                <Record Type="Common.ValueListParameterDisplayOnly">
+                                    <PropertyValue Property="ValueListProperty" String="PostalCode"/>
+                                </Record>
+                                <Record Type="Common.ValueListParameterDisplayOnly">
+                                    <PropertyValue Property="ValueListProperty" String="CustomerName"/>
+                                </Record>
+                                <Record Type="Common.ValueListParameterDisplayOnly">
+                                    <PropertyValue Property="ValueListProperty" String="BPCustomerName"/>
+                                </Record>
+                                <Record Type="Common.ValueListParameterDisplayOnly">
+                                    <PropertyValue Property="ValueListProperty" String="BusinessPartner"/>
+                                </Record>
+                            </Collection>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+            </Annotations>
+            <Annotations Target="YY1_FLGPCK_API_CDS.YY1_FLGPCK_E_StrTyVHEntityType/SourceStorageType" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+                <Annotation Term="Common.ValueList">
+                    <Record>
+                        <PropertyValue Property="Label" String="Storage Type"/>
+                        <PropertyValue Property="CollectionPath" String="I_EWM_StorageType_2"/>
+                        <PropertyValue Property="SearchSupported" Bool="false"/>
+                        <PropertyValue Property="Parameters">
+                            <Collection>
+                                <Record Type="Common.ValueListParameterInOut">
+                                    <PropertyValue Property="LocalDataProperty" PropertyPath="EWMWarehouse_1"/>
+                                    <PropertyValue Property="ValueListProperty" String="EWMWarehouse"/>
+                                </Record>
+                                <Record Type="Common.ValueListParameterInOut">
+                                    <PropertyValue Property="LocalDataProperty" PropertyPath="SourceStorageType"/>
+                                    <PropertyValue Property="ValueListProperty" String="EWMStorageType"/>
+                                </Record>
+                                <Record Type="Common.ValueListParameterDisplayOnly">
+                                    <PropertyValue Property="ValueListProperty" String="EWMStorageType_Text"/>
+                                </Record>
+                            </Collection>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+            </Annotations>
+            <Annotations Target="YY1_FLGPCK_API_CDS.YY1_FLGPCK_E_StrTyVHEntityType/EWMWarehouse_1" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+                <Annotation Term="Common.ValueList">
+                    <Record>
+                        <PropertyValue Property="Label" String="Warehouse Number"/>
+                        <PropertyValue Property="CollectionPath" String="I_EWM_WarehouseNumber_2"/>
+                        <PropertyValue Property="SearchSupported" Bool="true"/>
+                        <PropertyValue Property="Parameters">
+                            <Collection>
+                                <Record Type="Common.ValueListParameterInOut">
+                                    <PropertyValue Property="LocalDataProperty" PropertyPath="EWMWarehouse_1"/>
+                                    <PropertyValue Property="ValueListProperty" String="EWMWarehouse"/>
+                                </Record>
+                                <Record Type="Common.ValueListParameterDisplayOnly">
+                                    <PropertyValue Property="ValueListProperty" String="EWMWarehouse_Text"/>
+                                </Record>
+                            </Collection>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+            </Annotations>
+            <Annotations Target="YY1_FLGPCK_API_CDS.YY1_FLGPCK_API_CDS_Entities" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+                <Annotation Term="Common.ApplyMultiUnitBehaviorForSortingAndFiltering" Bool="true"/>
+            </Annotations>
+            <Annotations Target="YY1_FLGPCK_API_CDS.YY1_FLGPCK_API_CDS_Entities/I_EWM_StorageType_2" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+                <Annotation Term="Capabilities.NavigationRestrictions">
+                    <Record>
+                        <PropertyValue Property="RestrictedProperties">
+                            <Collection>
+                                <Record>
+                                    <PropertyValue Property="NavigationProperty" NavigationPropertyPath="to_Warehouse"/>
+                                    <PropertyValue Property="InsertRestrictions">
+                                        <Record>
+                                            <PropertyValue Property="Insertable" Bool="false"/>
+                                        </Record>
+                                    </PropertyValue>
+                                </Record>
+                            </Collection>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+            </Annotations>
+            <Annotations Target="YY1_FLGPCK_API_CDS.YY1_FLGPCK_API_CDS_Entities/YY1_FLGPCK_API" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+                <Annotation Term="Capabilities.NavigationRestrictions">
+                    <Record>
+                        <PropertyValue Property="RestrictedProperties">
+                            <Collection>
+                                <Record>
+                                    <PropertyValue Property="NavigationProperty" NavigationPropertyPath="to_YY1_FLGPCK_E_OutbDelEntity"/>
+                                    <PropertyValue Property="InsertRestrictions">
+                                        <Record>
+                                            <PropertyValue Property="Insertable" Bool="false"/>
+                                        </Record>
+                                    </PropertyValue>
+                                </Record>
+                                <Record>
+                                    <PropertyValue Property="NavigationProperty" NavigationPropertyPath="to_YY1_FLGPCK_E_ProdVHEntity"/>
+                                    <PropertyValue Property="InsertRestrictions">
+                                        <Record>
+                                            <PropertyValue Property="Insertable" Bool="false"/>
+                                        </Record>
+                                    </PropertyValue>
+                                </Record>
+                                <Record>
+                                    <PropertyValue Property="NavigationProperty" NavigationPropertyPath="to_YY1_FLGPCK_E_STPVHEntity"/>
+                                    <PropertyValue Property="InsertRestrictions">
+                                        <Record>
+                                            <PropertyValue Property="Insertable" Bool="false"/>
+                                        </Record>
+                                    </PropertyValue>
+                                </Record>
+                                <Record>
+                                    <PropertyValue Property="NavigationProperty" NavigationPropertyPath="to_YY1_FLGPCK_E_SrcBinEntity"/>
+                                    <PropertyValue Property="InsertRestrictions">
+                                        <Record>
+                                            <PropertyValue Property="Insertable" Bool="false"/>
+                                        </Record>
+                                    </PropertyValue>
+                                </Record>
+                                <Record>
+                                    <PropertyValue Property="NavigationProperty" NavigationPropertyPath="to_YY1_FLGPCK_E_StrTyVHEntity"/>
+                                    <PropertyValue Property="InsertRestrictions">
+                                        <Record>
+                                            <PropertyValue Property="Insertable" Bool="false"/>
+                                        </Record>
+                                    </PropertyValue>
+                                </Record>
+                                <Record>
+                                    <PropertyValue Property="NavigationProperty" NavigationPropertyPath="to_YY1_FLGPCK_E_WhseVHEntity"/>
+                                    <PropertyValue Property="InsertRestrictions">
+                                        <Record>
+                                            <PropertyValue Property="Insertable" Bool="false"/>
+                                        </Record>
+                                    </PropertyValue>
+                                </Record>
+                            </Collection>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+            </Annotations>
+            <Annotations Target="YY1_FLGPCK_API_CDS.YY1_FLGPCK_API_CDS_Entities/YY1_FLGPCK_E_SrcBinEntity" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+                <Annotation Term="Capabilities.NavigationRestrictions">
+                    <Record>
+                        <PropertyValue Property="RestrictedProperties">
+                            <Collection>
+                                <Record>
+                                    <PropertyValue Property="NavigationProperty" NavigationPropertyPath="to_Warehouse"/>
+                                    <PropertyValue Property="InsertRestrictions">
+                                        <Record>
+                                            <PropertyValue Property="Insertable" Bool="false"/>
+                                        </Record>
+                                    </PropertyValue>
+                                </Record>
+                            </Collection>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+            </Annotations>
+            <Annotations Target="YY1_FLGPCK_API_CDS.YY1_FLGPCK_API_CDS_Entities/YY1_FLGPCK_E_StrTyVHEntity" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+                <Annotation Term="Capabilities.NavigationRestrictions">
+                    <Record>
+                        <PropertyValue Property="RestrictedProperties">
+                            <Collection>
+                                <Record>
+                                    <PropertyValue Property="NavigationProperty" NavigationPropertyPath="to_SourceStorageType"/>
+                                    <PropertyValue Property="InsertRestrictions">
+                                        <Record>
+                                            <PropertyValue Property="Insertable" Bool="false"/>
+                                        </Record>
+                                    </PropertyValue>
+                                </Record>
+                                <Record>
+                                    <PropertyValue Property="NavigationProperty" NavigationPropertyPath="to_Warehouse"/>
+                                    <PropertyValue Property="InsertRestrictions">
+                                        <Record>
+                                            <PropertyValue Property="Insertable" Bool="false"/>
+                                        </Record>
+                                    </PropertyValue>
+                                </Record>
+                            </Collection>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+            </Annotations>
+            <Annotations Target="YY1_FLGPCK_API_CDS.I_EWM_StorageType_2Type" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+                <Annotation Term="Common.SAPObjectNodeType">
+                    <Record>
+                        <PropertyValue Property="Name" String="WarehouseStorageType"/>
+                    </Record>
+                </Annotation>
+            </Annotations>
+            <Annotations Target="YY1_FLGPCK_API_CDS.I_EWM_WarehouseNumber_2Type" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+                <Annotation Term="Common.SAPObjectNodeType">
+                    <Record>
+                        <PropertyValue Property="Name" String="Warehouse"/>
+                    </Record>
+                </Annotation>
+            </Annotations>
+            <Annotations Target="YY1_FLGPCK_API_CDS.YY1_FLGPCK_API_CDS_Entities" xmlns="http://docs.oasis-open.org/odata/ns/edm"/>
+            <atom:link rel="self" href="https://my305676-api.s4hana.ondemand.com/sap/opu/odata/sap/YY1_FLGPCK_API_CDS/$metadata" xmlns:atom="http://www.w3.org/2005/Atom"/>
+            <atom:link rel="latest-version" href="https://my305676-api.s4hana.ondemand.com/sap/opu/odata/sap/YY1_FLGPCK_API_CDS/$metadata" xmlns:atom="http://www.w3.org/2005/Atom"/>
+        </Schema>
+    </edmx:DataServices>
+</edmx:Edmx>

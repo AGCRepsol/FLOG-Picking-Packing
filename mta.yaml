@@ -1,0 +1,84 @@
+_schema-version: "3.2"
+ID: FLOGPickPack
+version: 0.0.1
+modules:
+- name: FLOGPickPack-app-content
+  type: com.sap.application.content
+  path: .
+  requires:
+  - name: FLOGPickPack-repo-host
+    parameters:
+      content-target: true
+  build-parameters:
+    build-result: resources
+    requires:
+    - artifacts:
+      - nsflgpick.zip
+      name: nsflgpick
+      target-path: resources/
+- name: nsflgpick
+  type: html5
+  path: flgpick
+  build-parameters:
+    build-result: dist
+    builder: custom
+    commands:
+    - npm install
+    - npm run build:cf
+    supported-platforms: []
+- name: FLOGPickPack-destination-content
+  type: com.sap.application.content
+  requires:
+  - name: FLOGPickPack-destination-service
+    parameters:
+      content-target: true
+  - name: FLOGPickPack-repo-host
+    parameters:
+      service-key:
+        name: FLOGPickPack-repo-host-key
+  - name: uaa_FLOGPickPack
+    parameters:
+      service-key:
+        name: uaa_FLOGPickPack-key
+  parameters:
+    content:
+      instance:
+        destinations:
+        - Name: flgpick_FLOGPickPack_repo_host
+          ServiceInstanceName: FLOGPickPack-html5-service
+          ServiceKeyName: FLOGPickPack-repo-host-key
+          sap.cloud.service: flgpick
+        - Authentication: OAuth2UserTokenExchange
+          Name: flgpick_uaa_FLOGPickPack
+          ServiceInstanceName: FLOGPickPack-xsuaa-service
+          ServiceKeyName: uaa_FLOGPickPack-key
+          sap.cloud.service: flgpick
+        existing_destinations_policy: ignore
+  build-parameters:
+    no-source: true
+resources:
+- name: FLOGPickPack-repo-host
+  type: org.cloudfoundry.managed-service
+  parameters:
+    service: html5-apps-repo
+    service-name: FLOGPickPack-html5-service
+    service-plan: app-host
+- name: FLOGPickPack-destination-service
+  type: org.cloudfoundry.managed-service
+  parameters:
+    config:
+      HTML5Runtime_enabled: true
+      version: 1.0.0
+    service: destination
+    service-name: FLOGPickPack-destination-service
+    service-plan: lite
+- name: uaa_FLOGPickPack
+  type: org.cloudfoundry.managed-service
+  parameters:
+    path: ./xs-security.json
+    service: xsuaa
+    service-name: FLOGPickPack-xsuaa-service
+    service-plan: application
+parameters:
+  deploy_mode: html5-repo
+  enable-parallel-deployments: true

@@ -1,0 +1,154 @@
+<edmx:Edmx xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx" Version="4.0">
+    <edmx:Reference Uri="https://sap.github.io/odata-vocabularies/vocabularies/Common.xml">
+        <edmx:Include Namespace="com.sap.vocabularies.Common.v1" Alias="Common"/>
+    </edmx:Reference>
+    
+    <edmx:Reference Uri="/sap/opu/odata/IWFND/CATALOGSERVICE;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_UI',Version='0001',SAP__Origin='LOCAL')/$value">
+        <edmx:Include Namespace="com.sap.vocabularies.UI.v1" Alias="UI" />
+    </edmx:Reference>
+
+    <edmx:Reference Uri="/sap/opu/odata/sap/YY1_FLGPCK_API_CDS/$metadata">
+        <edmx:Include Namespace="YY1_FLGPCK_API_CDS" Alias="SAP" />
+    </edmx:Reference>
+
+    <edmx:DataServices>
+        <Schema xmlns="http://docs.oasis-open.org/odata/ns/edm" Namespace="local">
+            <Annotations Target="SAP.YY1_FLGPCK_E_OutbDelEntityType">
+                <Annotation Term="UI.SelectionFields">
+                    <Collection>
+                        <PropertyPath>EWMWarehouse</PropertyPath>
+                        <PropertyPath>Product</PropertyPath>
+                        <PropertyPath>EWMOutboundDeliveryOrder</PropertyPath>
+                        <PropertyPath>SourceStorageType</PropertyPath>
+                        <PropertyPath>ShipToParty</PropertyPath>
+                    </Collection>
+                </Annotation>
+
+                <Annotation Term="UI.LineItem">
+                   <Collection>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Value" Path="EWMOutboundDeliveryOrder" />
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Value" Path="EWMOutboundDeliveryOrderItem" />
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Value" Path="EWMWarehouse" />
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Value" Path="Product" />
+                        </Record>
+                        <!-- <Record Type="UI.DataField">
+                            <PropertyValue Property="Value" Path="WarehouseOrder" />
+                        </Record> -->
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Value" Path="WarehouseTask" />
+                        </Record>
+                        <!-- <Record Type="UI.DataField">
+                            <PropertyValue Property="Value" Path="WarehouseTaskItem" />
+                        </Record> -->
+                        <!-- <Record Type="UI.DataField">
+                            <PropertyValue Property="Value" Path="SourceStorageType" />
+                        </Record> -->
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Value" Path="SourceStorageBin" />
+                        </Record>
+                        <!-- <Record Type="UI.DataField">
+                            <PropertyValue Property="Value" Path="DestinationStorageType" />
+                        </Record> -->
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Value" Path="DestinationStorageBin" />
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Value" Path="ShipToParty" />
+                        </Record>                   
+
+                   </Collection>     
+                </Annotation>
+            </Annotations>
+
+            <Annotations Target="SAP.YY1_FLGPCK_E_OutbDelEntityType/EWMWarehouse">
+                <Annotation Term="Common.ValueList" >
+                    <Record>
+                    <PropertyValue Property="CollectionPath" String="YY1_FLGPCK_E_WhseVHEntity"/>
+                    <PropertyValue Property="SearchSupported" Bool="true" />
+                    <PropertyValue Property="Parameters" >
+                        <Collection >
+
+                            <Record Type="Common.ValueListParameterInOut">
+                                <PropertyValue Property="LocalDataProperty" PropertyPath="EWMWarehouse"/>
+                                <PropertyValue Property="ValueListProperty" String="EWMWarehouse"/>
+                            </Record>
+                            <Record Type="Common.ValueListParameterDisplayOnly" >
+                                <PropertyValue Property="ValueListProperty" String="EWMWarehouseDescription"/>
+                            </Record >
+                        </Collection>    
+                    </PropertyValue>
+                    </Record>     
+             </Annotation>
+            </Annotations>
+
+            <Annotations Target="SAP.YY1_FLGPCK_E_OutbDelEntityType/Product">
+                <Annotation Term="Common.ValueList" >
+                    <Record>
+                    <PropertyValue Property="CollectionPath" String="YY1_FLGPCK_E_ProdVHEntity"/>
+                    <PropertyValue Property="SearchSupported" Bool="true" />
+                    <PropertyValue Property="Parameters" >
+                        <Collection >
+
+                            <Record Type="Common.ValueListParameterInOut">
+                                <PropertyValue Property="LocalDataProperty" PropertyPath="Product"/>
+                                <PropertyValue Property="ValueListProperty" String="Product"/>
+                            </Record>
+                            <Record Type="Common.ValueListParameterDisplayOnly" >
+                                <PropertyValue Property="ValueListProperty" String="Product"/>
+                                <PropertyValue Property="ValueListProperty" String="ProductName"/>
+                            </Record >
+                        </Collection>    
+                    </PropertyValue>
+                    </Record>     
+             </Annotation>
+            </Annotations>
+
+            <Annotations Target="SAP.YY1_FLGPCK_E_OutbDelEntityType/EWMOutboundDeliveryOrder">
+                <Annotation Term="Common.ValueList" >
+                    <Record>
+                    <PropertyValue Property="CollectionPath" String="YY1_FLGPCK_E_OutbDelEntity"/>
+                    <PropertyValue Property="SearchSupported" Bool="true" />
+                    <PropertyValue Property="Parameters" >
+                        <Collection >
+                            <Record Type="Common.ValueListParameterInOut">
+                                <PropertyValue Property="LocalDataProperty" PropertyPath="EWMOutboundDeliveryOrder"/>
+                                <PropertyValue Property="ValueListProperty" String="EWMOutboundDeliveryOrder"/>
+                            </Record>
+                        </Collection>    
+                    </PropertyValue>
+                    </Record>     
+             </Annotation>
+            </Annotations>
+
+            <Annotations Target="SAP.YY1_FLGPCK_E_OutbDelEntityType/SourceStorageType">
+                <Annotation Term="Common.ValueList" >
+                    <Record>
+                    <PropertyValue Property="CollectionPath" String="YY1_FLGPCK_E_StrTyVHEntity"/>
+                    <PropertyValue Property="SearchSupported" Bool="true" />
+                    <PropertyValue Property="Parameters" >
+                        <Collection >
+
+                            <Record Type="Common.ValueListParameterInOut">
+                                <PropertyValue Property="LocalDataProperty" PropertyPath="SourceStorageType"/>
+                                <PropertyValue Property="ValueListProperty" String="SourceStorageType"/>
+                            </Record>
+                            <Record Type="Common.ValueListParameterDisplayOnly" >
+                                <PropertyValue Property="ValueListProperty" String="SourceStorageType"/>
+                                <PropertyValue Property="ValueListProperty" String="EWMStorageTypeName"/>
+                            </Record >
+                        </Collection>    
+                    </PropertyValue>
+                    </Record>     
+             </Annotation>
+            </Annotations>
+
+        </Schema>
+    </edmx:DataServices>
+</edmx:Edmx>

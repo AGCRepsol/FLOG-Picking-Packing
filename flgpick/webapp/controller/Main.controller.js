@@ -119,12 +119,12 @@ sap.ui.define([
             debugger;
             //Get scanned value
             var sScanValue = oEvent.getParameter("text").trim();
-            this.scannedData = JSON.parse(sScanValue);
-            if (this.scannedData) {
-                var sWHNum = this.scannedData["EWMWarehouse"].toUpperCase();
-                //var sDeliveryNum  = this.scannedData["EWMOutboundDeliveryOrder"].toUpperCase();
-            }
-
+            // this.scannedData = JSON.parse(sScanValue);
+            // if (this.scannedData) {
+            //     var sWHNum = this.scannedData["EWMWarehouse"].toUpperCase();
+            //     //var sDeliveryNum  = this.scannedData["EWMOutboundDeliveryOrder"].toUpperCase();
+            // }
+            var sWHNum = sScanValue;
             // Create a filter data object
             var oFilterData = {
                 EWMWarehouse: sWHNum,

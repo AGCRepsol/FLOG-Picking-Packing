@@ -21,6 +21,8 @@
                         <PropertyPath>EWMOutboundDeliveryOrder</PropertyPath>
                         <PropertyPath>SourceStorageType</PropertyPath>
                         <PropertyPath>ShipToParty</PropertyPath>
+                        <PropertyPath>DeliveryDate</PropertyPath>
+                        <PropertyPath>PickingDate</PropertyPath>
                     </Collection>
                 </Annotation>
 
@@ -61,6 +63,12 @@
                         </Record>
                         <Record Type="UI.DataField">
                             <PropertyValue Property="Value" Path="ShipToParty" />
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Value" Path="DeliveryDate" />
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Value" Path="PickingDate" />
                         </Record>
                     </Collection>
                 </Annotation>

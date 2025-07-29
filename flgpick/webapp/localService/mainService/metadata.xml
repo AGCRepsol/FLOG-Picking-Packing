@@ -101,7 +101,7 @@
                     <PropertyRef Name="EWMOutboundDeliveryOrderItem"/>
                     <PropertyRef Name="EWMWarehouse"/>
                 </Key>
-                <Property Name="EWMOutboundDeliveryOrder" Type="Edm.String" Nullable="false" MaxLength="35" sap:display-format="UpperCase" sap:required-in-filter="false" sap:label="Document Number"/>
+                <Property Name="EWMOutboundDeliveryOrder" Type="Edm.String" Nullable="false" MaxLength="35" sap:display-format="UpperCase" sap:required-in-filter="false" sap:label="Delivery Number" sap:quickinfo="Document Number"/>
                 <Property Name="EWMOutboundDeliveryOrderItem" Type="Edm.String" Nullable="false" MaxLength="10" sap:display-format="NonNegative" sap:required-in-filter="false" sap:label="Item Number"/>
                 <Property Name="EWMWarehouse" Type="Edm.String" Nullable="false" MaxLength="4" sap:display-format="UpperCase" sap:required-in-filter="false" sap:label="Warehouse Number" sap:quickinfo="Warehouse Number/Warehouse Complex"/>
                 <Property Name="Product" Type="Edm.String" MaxLength="40" sap:display-format="UpperCase" sap:required-in-filter="false" sap:label="Product"/>
@@ -118,6 +118,8 @@
                 <Property Name="DestinationStorageBin" Type="Edm.String" MaxLength="18" sap:display-format="UpperCase" sap:required-in-filter="false" sap:label="Destination Bin" sap:quickinfo="Destination Storage Bin"/>
                 <Property Name="WarehouseOrder" Type="Edm.String" MaxLength="10" sap:display-format="NonNegative" sap:required-in-filter="false" sap:label="Warehouse Order" sap:quickinfo="Warehouse Order Number"/>
                 <Property Name="ShipToParty" Type="Edm.String" MaxLength="10" sap:display-format="UpperCase" sap:required-in-filter="false" sap:label="Ship-to Party" sap:value-list="standard"/>
+                <Property Name="DeliveryDate" Type="Edm.DateTime" Precision="0" sap:display-format="Date" sap:required-in-filter="false" sap:label="Delivery Date"/>
+                <Property Name="PickingDate" Type="Edm.DateTime" Precision="0" sap:display-format="Date" sap:required-in-filter="false" sap:label="Picking Date"/>
             </EntityType>
             <EntityType Name="YY1_FLGPCK_E_ProdVHEntityType" sap:label="Field Logistics - Product VH Entity" sap:content-version="1">
                 <Key>

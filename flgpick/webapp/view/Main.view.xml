@@ -76,6 +76,22 @@
                                         hasValueHelpDialog="true"
                                     />
                                 </smartFilterBar:controlConfiguration>
+
+                                <smartFilterBar:controlConfiguration>
+                                    <smartFilterBar:ControlConfiguration
+                                        id="idSFBDelDate"
+                                        key="DeliveryDate"
+                                        conditionType="sap.ui.comp.config.condition.DateRangeType"
+                                    />
+                                </smartFilterBar:controlConfiguration>
+
+                                <smartFilterBar:controlConfiguration>
+                                    <smartFilterBar:ControlConfiguration
+                                        id="idSFBPickDate"
+                                        key="PickingDate"
+                                        conditionType="sap.ui.comp.config.condition.DateRangeType"
+                                    />
+                                </smartFilterBar:controlConfiguration>
                             </smartFilterBar:SmartFilterBar>
                         </HBox>
                     </HBox>

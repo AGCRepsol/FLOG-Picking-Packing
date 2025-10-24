@@ -19,6 +19,7 @@
                         <PropertyPath>EWMWarehouse</PropertyPath>
                         <PropertyPath>Product</PropertyPath>
                         <PropertyPath>EWMOutboundDeliveryOrder</PropertyPath>
+                        <PropertyPath>EWMOutboundDeliveryOrderItem</PropertyPath>
                         <PropertyPath>SourceStorageType</PropertyPath>
                         <PropertyPath>ShipToParty</PropertyPath>
                         <PropertyPath>DeliveryDate</PropertyPath>

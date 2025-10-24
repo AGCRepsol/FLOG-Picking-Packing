@@ -118,17 +118,56 @@ sap.ui.define([
         onScannerShipLabel: function (oEvent) {
             debugger;
             //Get scanned value
+            var sOBDelivery = "";
+            var sOBDelItem = "";
+            var sWHNum = "";
+            var sProd = "";
+
             var sScanValue = oEvent.getParameter("text").trim();
-            // this.scannedData = JSON.parse(sScanValue);
-            // if (this.scannedData) {
-            //     var sWHNum = this.scannedData["EWMWarehouse"].toUpperCase();
-            //     //var sDeliveryNum  = this.scannedData["EWMOutboundDeliveryOrder"].toUpperCase();
-            // }
-            var sWHNum = sScanValue;
+            if (sScanValue) {
+                var sValArr = sScanValue.split("#");
+                
+                sValArr.forEach(element => {
+                    let sGS1Code2 = element.substring(0, 2);
+
+                    switch (sGS1Code2) {
+                        //Outbound Delivery: 
+                        case "Z5":
+                            sOBDelivery = element.slice(4);
+                            break;
+                        
+                        // Outbound Delivery item:
+                        case "Z6":
+                              sOBDelItem = element.slice(6);
+                              break;  
+                        default:
+                            break;
+                    }
+
+                    let sGS1Code3 = element.substring(0, 3);
+                    if (sGS1Code3 === "Z10" || sGS1Code3 === "240") {
+                        switch (sGS1Code3) {
+                            //Warehouse Number :
+                            case "Z10":
+                                sWHNum = element.slice(3);
+                                break;
+                            
+                            //Product : 
+                            case "240":
+                                sProd = element.slice(3);
+                                break;
+                            default:
+                                break;
+                        }
+                    }
+                });
+            }
             // Create a filter data object
             var oFilterData = {
                 EWMWarehouse: sWHNum,
-                //EWMOutboundDeliveryOrder: sDeliveryNum
+                Product: sProd,
+                EWMOutboundDeliveryOrder: sOBDelivery,
+                EWMOutboundDeliveryOrderItem: sOBDelItem
             };
 
             // Get the SmartFilterBar

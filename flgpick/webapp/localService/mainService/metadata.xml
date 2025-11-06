@@ -1,36 +1,36 @@
 <?xml version="1.0" encoding="utf-8"?>
 <edmx:Edmx Version="1.0" xmlns:edmx="http://schemas.microsoft.com/ado/2007/06/edmx" xmlns:m="http://schemas.microsoft.com/ado/2007/08/dataservices/metadata" xmlns:sap="http://www.sap.com/Protocols/SAPData">
-    <edmx:Reference Uri="https://my305676-api.s4hana.ondemand.com/sap/opu/odata/iwfnd/catalogservice;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_AGGREGATION',Version='0001',SAP__Origin='')/$value" xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx">
+    <edmx:Reference Uri="/sap/opu/odata/iwfnd/catalogservice;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_AGGREGATION',Version='0001',SAP__Origin='')/$value" xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx">
         <edmx:Include Namespace="Org.OData.Aggregation.V1" Alias="Aggregation"/>
     </edmx:Reference>
-    <edmx:Reference Uri="https://my305676-api.s4hana.ondemand.com/sap/opu/odata/iwfnd/catalogservice;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_ANALYTICS',Version='0001',SAP__Origin='')/$value" xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx">
+    <edmx:Reference Uri="/sap/opu/odata/iwfnd/catalogservice;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_ANALYTICS',Version='0001',SAP__Origin='')/$value" xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx">
         <edmx:Include Namespace="com.sap.vocabularies.Analytics.v1" Alias="Analytics"/>
     </edmx:Reference>
-    <edmx:Reference Uri="https://my305676-api.s4hana.ondemand.com/sap/opu/odata/iwfnd/catalogservice;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_CAPABILITIES',Version='0001',SAP__Origin='')/$value" xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx">
+    <edmx:Reference Uri="/sap/opu/odata/iwfnd/catalogservice;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_CAPABILITIES',Version='0001',SAP__Origin='')/$value" xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx">
         <edmx:Include Namespace="Org.OData.Capabilities.V1" Alias="Capabilities"/>
     </edmx:Reference>
-    <edmx:Reference Uri="https://my305676-api.s4hana.ondemand.com/sap/opu/odata/iwfnd/catalogservice;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_CODELIST',Version='0001',SAP__Origin='')/$value" xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx">
+    <edmx:Reference Uri="/sap/opu/odata/iwfnd/catalogservice;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_CODELIST',Version='0001',SAP__Origin='')/$value" xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx">
         <edmx:Include Namespace="com.sap.vocabularies.CodeList.v1" Alias="SAP__CodeList"/>
     </edmx:Reference>
-    <edmx:Reference Uri="https://my305676-api.s4hana.ondemand.com/sap/opu/odata/iwfnd/catalogservice;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_COMMON',Version='0001',SAP__Origin='')/$value" xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx">
+    <edmx:Reference Uri="/sap/opu/odata/iwfnd/catalogservice;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_COMMON',Version='0001',SAP__Origin='')/$value" xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx">
         <edmx:Include Namespace="com.sap.vocabularies.Common.v1" Alias="Common"/>
     </edmx:Reference>
-    <edmx:Reference Uri="https://my305676-api.s4hana.ondemand.com/sap/opu/odata/iwfnd/catalogservice;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_COMMUNICATION',Version='0001',SAP__Origin='')/$value" xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx">
+    <edmx:Reference Uri="/sap/opu/odata/iwfnd/catalogservice;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_COMMUNICATION',Version='0001',SAP__Origin='')/$value" xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx">
         <edmx:Include Namespace="com.sap.vocabularies.Communication.v1" Alias="Communication"/>
     </edmx:Reference>
-    <edmx:Reference Uri="https://my305676-api.s4hana.ondemand.com/sap/opu/odata/iwfnd/catalogservice;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_MEASURES',Version='0001',SAP__Origin='')/$value" xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx">
+    <edmx:Reference Uri="/sap/opu/odata/iwfnd/catalogservice;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_MEASURES',Version='0001',SAP__Origin='')/$value" xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx">
         <edmx:Include Namespace="Org.OData.Measures.V1" Alias="Measures"/>
     </edmx:Reference>
-    <edmx:Reference Uri="https://my305676-api.s4hana.ondemand.com/sap/opu/odata/iwfnd/catalogservice;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_ODM',Version='0001',SAP__Origin='')/$value" xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx">
+    <edmx:Reference Uri="/sap/opu/odata/iwfnd/catalogservice;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_ODM',Version='0001',SAP__Origin='')/$value" xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx">
         <edmx:Include Namespace="com.sap.vocabularies.ODM.v1" Alias="SAP__ODM"/>
     </edmx:Reference>
-    <edmx:Reference Uri="https://my305676-api.s4hana.ondemand.com/sap/opu/odata/iwfnd/catalogservice;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_PERSONALDATA',Version='0001',SAP__Origin='')/$value" xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx">
+    <edmx:Reference Uri="/sap/opu/odata/iwfnd/catalogservice;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_PERSONALDATA',Version='0001',SAP__Origin='')/$value" xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx">
         <edmx:Include Namespace="com.sap.vocabularies.PersonalData.v1" Alias="PersonalData"/>
     </edmx:Reference>
-    <edmx:Reference Uri="https://my305676-api.s4hana.ondemand.com/sap/opu/odata/iwfnd/catalogservice;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_UI',Version='0001',SAP__Origin='')/$value" xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx">
+    <edmx:Reference Uri="/sap/opu/odata/iwfnd/catalogservice;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_UI',Version='0001',SAP__Origin='')/$value" xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx">
         <edmx:Include Namespace="com.sap.vocabularies.UI.v1" Alias="UI"/>
     </edmx:Reference>
-    <edmx:Reference Uri="https://my305676-api.s4hana.ondemand.com/sap/opu/odata/iwfnd/catalogservice;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_VALIDATION',Version='0001',SAP__Origin='')/$value" xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx">
+    <edmx:Reference Uri="/sap/opu/odata/iwfnd/catalogservice;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_VALIDATION',Version='0001',SAP__Origin='')/$value" xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx">
         <edmx:Include Namespace="Org.OData.Validation.V1" Alias="Validation"/>
     </edmx:Reference>
     <edmx:DataServices m:DataServiceVersion="2.0">
@@ -100,23 +100,26 @@
                     <PropertyRef Name="EWMOutboundDeliveryOrder"/>
                     <PropertyRef Name="EWMOutboundDeliveryOrderItem"/>
                     <PropertyRef Name="EWMWarehouse"/>
+                    <PropertyRef Name="WarehouseTask"/>
+                    <PropertyRef Name="WarehouseTaskItem"/>
+                    <PropertyRef Name="WarehouseOrder"/>
                 </Key>
                 <Property Name="EWMOutboundDeliveryOrder" Type="Edm.String" Nullable="false" MaxLength="35" sap:display-format="UpperCase" sap:required-in-filter="false" sap:label="Delivery Number" sap:quickinfo="Document Number"/>
                 <Property Name="EWMOutboundDeliveryOrderItem" Type="Edm.String" Nullable="false" MaxLength="10" sap:display-format="NonNegative" sap:required-in-filter="false" sap:label="Item Number"/>
                 <Property Name="EWMWarehouse" Type="Edm.String" Nullable="false" MaxLength="4" sap:display-format="UpperCase" sap:required-in-filter="false" sap:label="Warehouse Number" sap:quickinfo="Warehouse Number/Warehouse Complex"/>
+                <Property Name="WarehouseTask" Type="Edm.String" Nullable="false" MaxLength="12" sap:display-format="NonNegative" sap:required-in-filter="false" sap:label="Warehouse Task"/>
+                <Property Name="WarehouseTaskItem" Type="Edm.String" Nullable="false" MaxLength="4" sap:display-format="NonNegative" sap:required-in-filter="false" sap:label="WT Item" sap:quickinfo="Warehouse Task Item"/>
+                <Property Name="WarehouseOrder" Type="Edm.String" Nullable="false" MaxLength="10" sap:display-format="NonNegative" sap:required-in-filter="false" sap:label="Warehouse Order" sap:quickinfo="Warehouse Order Number"/>
                 <Property Name="Product" Type="Edm.String" MaxLength="40" sap:display-format="UpperCase" sap:required-in-filter="false" sap:label="Product"/>
                 <Property Name="OutboundDelivery" Type="Edm.String" MaxLength="10" sap:display-format="UpperCase" sap:required-in-filter="false" sap:label="LE Delivery" sap:quickinfo="Logistics Execution Delivery"/>
                 <Property Name="OutboundDeliveryItem" Type="Edm.String" MaxLength="6" sap:display-format="NonNegative" sap:required-in-filter="false" sap:label="Logistics Execution Delivery Item"/>
                 <Property Name="PlannedPickingStatus" Type="Edm.String" MaxLength="1" sap:display-format="UpperCase" sap:required-in-filter="false" sap:label="Status Value"/>
                 <Property Name="PickingStatus" Type="Edm.String" MaxLength="1" sap:display-format="UpperCase" sap:required-in-filter="false" sap:label="Status Value"/>
                 <Property Name="GoodsIssueStatus" Type="Edm.String" MaxLength="1" sap:display-format="UpperCase" sap:required-in-filter="false" sap:label="Status Value"/>
-                <Property Name="WarehouseTask" Type="Edm.String" MaxLength="12" sap:display-format="NonNegative" sap:required-in-filter="false" sap:label="Warehouse Task"/>
-                <Property Name="WarehouseTaskItem" Type="Edm.String" MaxLength="4" sap:display-format="NonNegative" sap:required-in-filter="false" sap:label="WT Item" sap:quickinfo="Warehouse Task Item"/>
                 <Property Name="SourceStorageType" Type="Edm.String" MaxLength="4" sap:display-format="UpperCase" sap:required-in-filter="false" sap:label="Source Storage Type"/>
                 <Property Name="SourceStorageBin" Type="Edm.String" MaxLength="18" sap:display-format="UpperCase" sap:required-in-filter="false" sap:label="Source Storage Bin"/>
                 <Property Name="DestinationStorageType" Type="Edm.String" MaxLength="4" sap:display-format="UpperCase" sap:required-in-filter="false" sap:label="Dest. Storage Type" sap:quickinfo="Destination Storage Type"/>
                 <Property Name="DestinationStorageBin" Type="Edm.String" MaxLength="18" sap:display-format="UpperCase" sap:required-in-filter="false" sap:label="Destination Bin" sap:quickinfo="Destination Storage Bin"/>
-                <Property Name="WarehouseOrder" Type="Edm.String" MaxLength="10" sap:display-format="NonNegative" sap:required-in-filter="false" sap:label="Warehouse Order" sap:quickinfo="Warehouse Order Number"/>
                 <Property Name="ShipToParty" Type="Edm.String" MaxLength="10" sap:display-format="UpperCase" sap:required-in-filter="false" sap:label="Ship-to Party" sap:value-list="standard"/>
                 <Property Name="DeliveryDate" Type="Edm.DateTime" Precision="0" sap:display-format="Date" sap:required-in-filter="false" sap:label="Delivery Date"/>
                 <Property Name="PickingDate" Type="Edm.DateTime" Precision="0" sap:display-format="Date" sap:required-in-filter="false" sap:label="Picking Date"/>
@@ -460,8 +463,8 @@
                 </Annotation>
             </Annotations>
             <Annotations Target="YY1_FLGPCK_API_CDS.YY1_FLGPCK_API_CDS_Entities" xmlns="http://docs.oasis-open.org/odata/ns/edm"/>
-            <atom:link rel="self" href="https://my305676-api.s4hana.ondemand.com/sap/opu/odata/sap/YY1_FLGPCK_API_CDS/$metadata" xmlns:atom="http://www.w3.org/2005/Atom"/>
-            <atom:link rel="latest-version" href="https://my305676-api.s4hana.ondemand.com/sap/opu/odata/sap/YY1_FLGPCK_API_CDS/$metadata" xmlns:atom="http://www.w3.org/2005/Atom"/>
+            <atom:link rel="self" href="/sap/opu/odata/sap/YY1_FLGPCK_API_CDS/$metadata" xmlns:atom="http://www.w3.org/2005/Atom"/>
+            <atom:link rel="latest-version" href="/sap/opu/odata/sap/YY1_FLGPCK_API_CDS/$metadata" xmlns:atom="http://www.w3.org/2005/Atom"/>
         </Schema>
     </edmx:DataServices>
 </edmx:Edmx>

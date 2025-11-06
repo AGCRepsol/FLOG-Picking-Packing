@@ -41,24 +41,12 @@
                         <Record Type="UI.DataField">
                             <PropertyValue Property="Value" Path="Product" />
                         </Record>
-                        <!-- <Record Type="UI.DataField">
-                            <PropertyValue Property="Value" Path="WarehouseOrder" />
-                        </Record> -->
                         <Record Type="UI.DataField">
                             <PropertyValue Property="Value" Path="WarehouseTask" />
-                        </Record>
-                        <!-- <Record Type="UI.DataField">
-                            <PropertyValue Property="Value" Path="WarehouseTaskItem" />
-                        </Record> -->
-                        <!-- <Record Type="UI.DataField">
-                            <PropertyValue Property="Value" Path="SourceStorageType" />
-                        </Record> -->
+                        </Record>   
                         <Record Type="UI.DataField">
                             <PropertyValue Property="Value" Path="SourceStorageBin" />
                         </Record>
-                        <!-- <Record Type="UI.DataField">
-                            <PropertyValue Property="Value" Path="DestinationStorageType" />
-                        </Record> -->
                         <Record Type="UI.DataField">
                             <PropertyValue Property="Value" Path="DestinationStorageBin" />
                         </Record>

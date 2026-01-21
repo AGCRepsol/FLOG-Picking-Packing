@@ -133,12 +133,14 @@ sap.ui.define([
                     switch (sGS1Code2) {
                         //Outbound Delivery: 
                         case "Z5":
-                            sOBDelivery = element.slice(4);
+                            //sOBDelivery = element.slice(4);
+                            sOBDelivery= element.slice(2);
                             break;
                         
                         // Outbound Delivery item:
                         case "Z6":
-                              sOBDelItem = element.slice(6);
+                              //sOBDelItem = element.slice(6);
+                              sOBDelItem = element.slice(2);
                               break;  
                         default:
                             break;
